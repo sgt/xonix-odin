@@ -5,7 +5,10 @@ common_flags := "-out:build/" + filename + ".exe -pdb-name:build/" + filename + 
 debug_flags := "-debug"
 release_flags := "-o:speed"
 
-default: (run "debug")
+alias b := build
+alias r := run
+
+default: (build "debug")
 
 buildOrRun cmd target:
     if not exist build mkdir build
